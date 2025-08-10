@@ -36,8 +36,8 @@ if __name__ == "__main__":
         if scan_port(target_ip, port):
             print(f"[+] Port {port} is OPEN")
             open_ports.append(port)
-        else:
-            print(f"[-] Port {port} is closed/filtered")
+        # else:
+        #     print(f"[-] Port {port} is closed/filtered")
 
     if open_ports:
         print(f"\nScan complete. Open ports found on {target_ip}: {open_ports}")

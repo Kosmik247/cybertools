@@ -2,15 +2,18 @@ import threading
 from queue import Queue
 import time
 import ipaddress
-from scapy.all import ARP, Ether, srp
+# from scapy.all import ARP, Ether, srp
 
 
 def get_ip_range_from_cidr(cidr):
     
     try:
         network = ipaddress.ip_network(cidr, strict=False)
+        
+        for ip in network.hosts():
+            print(ip.exploded)
         # Exclude network address and broadcast address for typical host scanning
-        return [str(ip) for ip in network.hosts()]
+    #     return [str(ip) for ip in network.hosts()]
     except ValueError as e:
         print(f"Error parsing CIDR: {e}. Please use a valid CIDR (e.g., 192.168.1.0/24).")
         return []
