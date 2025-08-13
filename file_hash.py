@@ -42,8 +42,8 @@ if __name__ == "__main__":
     
     if initial_hash:
         print(f"Initial SHA256 Hash of '{file_to_check}': {initial_hash}")
-        # In a real scenario, you would save this hash to a trusted location (e.g., a separate file, database).
-        # For this basic example, we'll store it in a variable for immediate comparison.
+        # In a real scenario, would save this hash to a trusted location (e.g., a separate file, database).
+        
 
         input("\n(Optional) Now, try modifying the file (e.g., open it and add a space, then save). Press Enter to continue and verify...")
 
